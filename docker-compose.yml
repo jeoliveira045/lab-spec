@@ -1,0 +1,10 @@
+services:
+  controle_estoque_db:
+    image: oracle/database:snapshot
+    container_name: lab-spec
+    volumes:
+      - ./src/main/resources/docker:/docker-entrypoint-initdb.d/startup
+    environment:
+      - ORACLE_PWD=123456
+    ports:
+      - 1521:1521
